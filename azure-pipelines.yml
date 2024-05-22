@@ -27,14 +27,4 @@ steps:
     command: 'build'
     projects: 'WebApplication1.sln'    
     arguments: '--configuration $(buildConfiguration)'
-- task: DotNetCoreCLI@2
-  displayName: 'Publish Docker image'
-  inputs:
-    command: 'publish'    
-    projects: 'WebApplication1/WebApplication1.csproj'
-    arguments: '-p ContainerRegistry=$(appName).azurecr.io 
-                -p ContainerImageTag=$(Build.BuildId) 
-                /t:PublishContainer'
-    publishWebProjects: false
-    zipAfterPublish: false
-    nobuild: true    
+ 
