@@ -20,4 +20,9 @@ steps:
   inputs:
     packageType: 'sdk'
     version: '6.x'
- 
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: 'build'
+    projects: 'WebApplication1.sln'    
+    arguments: '--configuration $(buildConfiguration)'
